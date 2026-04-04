@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --color-bg: #0F1923;
+  --color-sidebar: #152030;
+  --color-card: rgba(255, 255, 255, 0.05);
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-primary: #00C896;
+  --color-primary-hover: #00e6a8;
+  --color-primary-dim: #00a67d;
+  --color-secondary: #F0A500;
+  --color-secondary-hover: #ffb31a;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(255, 255, 255, 0.05);
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
+  --blur-card: 12px;
+  --blur-card: 12px;
+  --radius: 8px;
+  --radius-sm: 6px;
+  --sidebar-width: 240px;
+  --header-height: 56px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 60%);
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+
+button:active::after {
+  animation: button-ripple 0.5s ease-out forwards;
+}
+
+@keyframes button-ripple {
+  0% {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+button.primary {
+  background: var(--color-primary);
+  color: #0F1923;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+button.primary:hover {
+  background: var(--color-primary-hover);
+}
+
+button.secondary {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+}
+
+button.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-primary);
+}
