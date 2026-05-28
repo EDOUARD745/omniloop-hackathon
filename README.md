@@ -1,4 +1,4 @@
-# OmniLoop — Logistique Circulaire Intégrée
+# OmniLoop - Logistique Circulaire Intégrée
 
 > Plateforme SaaS de gestion de l'offboarding matériel en entreprise (IT + textile)
 
